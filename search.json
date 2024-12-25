@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Creating Effective Prompts for R Coding",
+    "section": "",
+    "text": "Specify the task and desired outcome.\nEliminate ambiguity in the requirements.\n\n\n\n\n\n\n\nBad Prompt\n\n\n\nTASK: Text cleaning function\nINPUT: character vector\nREQUIREMENTS:\n- Remove special characters\n- Convert to lowercase\nOUTPUT: cleaned vector\n\n\n\n\n\n\n\n\nGood Prompt\n\n\n\nCreate an R function that cleans text data by removing special characters and converting to lowercase. The input should be a character vector.\nPlease provide the code and a brief explanation of your approach.\n\n\n\n\n\nFrame requests in terms of “do this” rather than “don’t do this.” This encourages clarity and actionable guidance."
+  },
+  {
+    "objectID": "index.html#set-clear-goals",
+    "href": "index.html#set-clear-goals",
+    "title": "Creating Effective Prompts for R Coding",
+    "section": "",
+    "text": "Specify the task and desired outcome.\nEliminate ambiguity in the requirements.\n\n\n\n\n\n\n\nBad Prompt\n\n\n\nTASK: Text cleaning function\nINPUT: character vector\nREQUIREMENTS:\n- Remove special characters\n- Convert to lowercase\nOUTPUT: cleaned vector\n\n\n\n\n\n\n\n\nGood Prompt\n\n\n\nCreate an R function that cleans text data by removing special characters and converting to lowercase. The input should be a character vector.\nPlease provide the code and a brief explanation of your approach."
+  },
+  {
+    "objectID": "index.html#use-positive-language",
+    "href": "index.html#use-positive-language",
+    "title": "Creating Effective Prompts for R Coding",
+    "section": "",
+    "text": "Frame requests in terms of “do this” rather than “don’t do this.” This encourages clarity and actionable guidance."
+  },
+  {
+    "objectID": "index.html#provide-context-and-specifications",
+    "href": "index.html#provide-context-and-specifications",
+    "title": "Creating Effective Prompts for R Coding",
+    "section": "Provide Context and Specifications",
+    "text": "Provide Context and Specifications\n\nSpecify the desired output format (e.g., R function, script, or data frame).\nInclude relevant libraries or packages.\n\n\n\n\n\n\n\nGood Prompt\n\n\n\nUsing the tidyverse ecosystem in R, write code to analyze my sales data with these specifications:\n\nsales_data &lt;- data.frame(\n  date = c(\"2024-01-01\", \"2024-01-02\", \"2024-01-01\"),\n  region = c(\"North\", \"South\", \"North\"),\n  sales = c(1200, NA, 1500),\n  units = c(50, 45, 60)\n)\n\nRequirements:\n1. Calculate mean sales and total units by region and month.\n2. Format dates appropriately.\n3. Return results in a tidied data frame.\n\n\n\n\n\n\n\n\nBad Prompt\n\n\n\nAverage my data in R.\n\nsales_data &lt;- data.frame(\n  date = c(\"2024-01-01\", \"2024-01-02\", \"2024-01-01\"),\n  region = c(\"North\", \"South\", \"North\"),\n  sales = c(1200, NA, 1500),\n  units = c(50, 45, 60)\n)"
+  },
+  {
+    "objectID": "index.html#do",
+    "href": "index.html#do",
+    "title": "Creating Effective Prompts for R Coding",
+    "section": "Do:",
+    "text": "Do:\n\nClearly specify the required packages and dependencies.\nInclude sample data or a detailed description of the expected data structure.\nRequest robust error handling and input validation.\nBreak down complex tasks into smaller, manageable prompts.\nAsk for explanations of choices or methods used."
+  },
+  {
+    "objectID": "index.html#dont",
+    "href": "index.html#dont",
+    "title": "Creating Effective Prompts for R Coding",
+    "section": "Don’t:",
+    "text": "Don’t:\n\nProvide ambiguous or incomplete requirements.\nOverload prompts with unrelated tasks.\nAssume implicit knowledge of specific packages without mentioning them.\nNeglect to specify data types or structures explicitly."
+  }
+]
