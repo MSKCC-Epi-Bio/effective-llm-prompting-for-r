@@ -1,0 +1,59 @@
+---
+title: "AI-Related R Packages"
+description: "Essential R packages for AI integration and development"
+---
+
+## Overview
+
+This page showcases R packages that help integrate AI capabilities into your R workflows.
+
+## Featured Packages
+
+### torch
+
+The R interface to PyTorch, providing tools for deep learning.
+
+```r
+# Install torch
+install.packages("torch")
+
+# Simple example
+library(torch)
+x <- torch_tensor(1:10)
+y <- x$pow(2)
+```
+
+### tidymodels
+
+A collection of packages for modeling and machine learning using tidyverse principles.
+
+```r
+# Install tidymodels
+install.packages("tidymodels")
+
+# Simple workflow example
+library(tidymodels)
+model <- rand_forest() %>%
+  set_engine("ranger") %>%
+  set_mode("regression")
+```
+
+### text
+
+A framework for text preprocessing, representation, and modeling.
+
+```r
+# Install text
+install.packages("text")
+
+# Simple text processing example
+library(text)
+text_obj <- create_text(data$text_column)
+embeddings <- embed_text(text_obj)
+```
+
+## Coming Soon
+
+* More package recommendations
+* Integration examples
+* Performance comparisons

@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Tools and services that integrate with R for enhanced AI capabilities">
 
-<title>AI Resources for R Programmers – AI Resources for R</title>
+<title>AI Tools for R – AI Resources for R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,25 +21,59 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-6685f57f7611d95a701d58b4cc6878c0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-6685f57f7611d95a701d58b4cc6878c0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,7 +103,7 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -78,7 +113,7 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">AI Resources for R</span>
     </a>
   </div>
@@ -89,23 +124,23 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./pages/useful-prompts.html"> 
+    <a class="nav-link" href="../pages/useful-prompts.html"> 
 <span class="menu-text">Useful Prompts</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./pages/r-packages.html"> 
+    <a class="nav-link" href="../pages/r-packages.html"> 
 <span class="menu-text">R Packages</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./pages/ai-tools.html"> 
+    <a class="nav-link active" href="../pages/ai-tools.html" aria-current="page"> 
 <span class="menu-text">AI Tools</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./pages/statistical-workflows.html"> 
+    <a class="nav-link" href="../pages/statistical-workflows.html"> 
 <span class="menu-text">Statistical Workflows</span></a>
   </li>  
 </ul>
@@ -116,21 +151,41 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#featured-tools" id="toc-featured-tools" class="nav-link" data-scroll-target="#featured-tools">Featured Tools</a>
+  <ul class="collapse">
+  <li><a href="#openai-api" id="toc-openai-api" class="nav-link" data-scroll-target="#openai-api">OpenAI API</a></li>
+  <li><a href="#huggingface-transformers" id="toc-huggingface-transformers" class="nav-link" data-scroll-target="#huggingface-transformers">HuggingFace Transformers</a></li>
+  <li><a href="#rstudio-ai-assistant" id="toc-rstudio-ai-assistant" class="nav-link" data-scroll-target="#rstudio-ai-assistant">RStudio AI Assistant</a></li>
+  </ul></li>
+  <li><a href="#coming-soon" id="toc-coming-soon" class="nav-link" data-scroll-target="#coming-soon">Coming Soon</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">AI Resources for R Programmers</h1>
+<h1 class="title">AI Tools for R</h1>
+</div>
+
+<div>
+  <div class="description">
+    Tools and services that integrate with R for enhanced AI capabilities
+  </div>
 </div>
 
 
-
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
     
   
@@ -142,93 +197,73 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="grid content-container">
-<div class="g-col-12 g-col-md-6 card-container">
-<section id="useful-prompts" class="level3 card">
-<h3 class="anchored" data-anchor-id="useful-prompts"><span class="card-title">Useful Prompts</span></h3>
-<p>A curated collection of effective prompts for leveraging AI in your R workflows.</p>
-<p><span class="btn btn-primary card-link" href="pages/useful-prompts.html">Explore prompts →</span></p>
+<section id="overview" class="level2">
+<h2 class="anchored" data-anchor-id="overview">Overview</h2>
+<p>This page highlights external AI tools and services that can be leveraged in R workflows.</p>
 </section>
-</div>
-<div class="g-col-12 g-col-md-6 card-container">
-<section id="r-packages" class="level3 card">
-<h3 class="anchored" data-anchor-id="r-packages"><span class="card-title">R Packages</span></h3>
-<p>Essential R packages that enhance your AI development and integration capabilities.</p>
-<p><span class="btn btn-primary card-link" href="pages/r-packages.html">Discover packages →</span></p>
+<section id="featured-tools" class="level2">
+<h2 class="anchored" data-anchor-id="featured-tools">Featured Tools</h2>
+<section id="openai-api" class="level3">
+<h3 class="anchored" data-anchor-id="openai-api">OpenAI API</h3>
+<p>Access powerful language models like GPT-4 directly from R.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using httr2 package to call OpenAI API</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(httr2)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(jsonlite)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>openai_completion <span class="ot">&lt;-</span> <span class="cf">function</span>(prompt, <span class="at">model =</span> <span class="st">"gpt-4"</span>) {</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  request <span class="ot">&lt;-</span> <span class="fu">request</span>(<span class="st">"https://api.openai.com/v1/chat/completions"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">req_headers</span>(</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Content-Type"</span> <span class="ot">=</span> <span class="st">"application/json"</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      <span class="st">"Authorization"</span> <span class="ot">=</span> <span class="fu">paste</span>(<span class="st">"Bearer"</span>, <span class="fu">Sys.getenv</span>(<span class="st">"OPENAI_API_KEY"</span>))</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    ) <span class="sc">%&gt;%</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">req_body_json</span>(<span class="fu">list</span>(</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      <span class="at">model =</span> model,</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      <span class="at">messages =</span> <span class="fu">list</span>(<span class="fu">list</span>(<span class="at">role =</span> <span class="st">"user"</span>, <span class="at">content =</span> prompt)),</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      <span class="at">temperature =</span> <span class="fl">0.7</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    )) <span class="sc">%&gt;%</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="fu">req_perform</span>()</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  response <span class="ot">&lt;-</span> <span class="fu">resp_body_json</span>(request)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(response<span class="sc">$</span>choices[[<span class="dv">1</span>]]<span class="sc">$</span>message<span class="sc">$</span>content)</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</div>
-<div class="g-col-12 g-col-md-6 card-container">
-<section id="ai-tools" class="level3 card">
-<h3 class="anchored" data-anchor-id="ai-tools"><span class="card-title">AI Tools</span></h3>
-<p>Tools and services that seamlessly integrate with R for machine learning and AI applications.</p>
-<p><span class="btn btn-primary card-link" href="pages/ai-tools.html">View tools →</span></p>
+<section id="huggingface-transformers" class="level3">
+<h3 class="anchored" data-anchor-id="huggingface-transformers">HuggingFace Transformers</h3>
+<p>Use state-of-the-art NLP models in your R workflow.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Using reticulate to access HuggingFace in R</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(reticulate)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialize transformers</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>transformers <span class="ot">&lt;-</span> <span class="fu">import</span>(<span class="st">"transformers"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Load a pre-trained model</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>model_name <span class="ot">&lt;-</span> <span class="st">"distilbert-base-uncased-finetuned-sst-2-english"</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>tokenizer <span class="ot">&lt;-</span> transformers<span class="sc">$</span>AutoTokenizer<span class="sc">$</span><span class="fu">from_pretrained</span>(model_name)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>model <span class="ot">&lt;-</span> transformers<span class="sc">$</span>AutoModelForSequenceClassification<span class="sc">$</span><span class="fu">from_pretrained</span>(model_name)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Function to analyze sentiment</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>analyze_sentiment <span class="ot">&lt;-</span> <span class="cf">function</span>(text) {</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  inputs <span class="ot">&lt;-</span> <span class="fu">tokenizer</span>(text, <span class="at">return_tensors =</span> <span class="st">"pt"</span>)</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  outputs <span class="ot">&lt;-</span> <span class="fu">model</span>(<span class="sc">**</span>inputs)</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  predictions <span class="ot">&lt;-</span> outputs<span class="sc">$</span>logits<span class="sc">$</span><span class="fu">argmax</span>(<span class="at">dim =</span> <span class="dv">2</span>L)</span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(<span class="fu">as.integer</span>(predictions[<span class="dv">1</span>]) <span class="sc">-</span> <span class="dv">1</span>) <span class="co"># 0 for negative, 1 for positive</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
-</div>
-<div class="g-col-12 g-col-md-6 card-container">
-<section id="statistical-workflows" class="level3 card">
-<h3 class="anchored" data-anchor-id="statistical-workflows"><span class="card-title">Statistical Workflows</span></h3>
-<p>AI-enhanced methods for statistical analysis and data pipeline optimization in R.</p>
-<p><span class="btn btn-primary card-link" href="pages/statistical-workflows.html">Learn workflows →</span></p>
+<section id="rstudio-ai-assistant" class="level3">
+<h3 class="anchored" data-anchor-id="rstudio-ai-assistant">RStudio AI Assistant</h3>
+<p>RStudio’s integrated AI assistance provides code suggestions, explanations, and more.</p>
 </section>
-</div>
-</div>
-<style>
-.content-container {
-  margin-top: 2rem;
-}
-
-.card-container {
-  padding: 0.75rem;
-}
-
-.card {
-  border-radius: 8px;
-  padding: 1.5rem;
-  height: 100%;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  transition: transform 0.3s, box-shadow 0.3s;
-  display: flex;
-  flex-direction: column;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
-}
-
-.card-title {
-  color: #2c3e50;
-  margin-top: 0;
-  margin-bottom: 1rem;
-  border-bottom: 2px solid #f0f0f0;
-  padding-bottom: 0.5rem;
-}
-
-.btn {
-  display: inline-block;
-  padding: 0.375rem 0.75rem;
-  border-radius: 0.25rem;
-  text-decoration: none;
-  margin-top: auto;
-  align-self: flex-start;
-  font-weight: 500;
-}
-
-.btn-primary {
-  background-color: #4e79a7;
-  color: white;
-}
-
-.btn-primary:hover {
-  background-color: #3a5a80;
-}
-
-.card-link {
-  text-decoration: none;
-}
-</style>
+</section>
+<section id="coming-soon" class="level2">
+<h2 class="anchored" data-anchor-id="coming-soon">Coming Soon</h2>
+<ul>
+<li>Integration tutorials</li>
+<li>Performance benchmarks</li>
+<li>Cost considerations</li>
+</ul>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

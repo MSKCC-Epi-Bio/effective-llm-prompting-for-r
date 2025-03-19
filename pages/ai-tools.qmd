@@ -1,0 +1,72 @@
+---
+title: "AI Tools for R"
+description: "Tools and services that integrate with R for enhanced AI capabilities"
+---
+
+## Overview
+
+This page highlights external AI tools and services that can be leveraged in R workflows.
+
+## Featured Tools
+
+### OpenAI API
+
+Access powerful language models like GPT-4 directly from R.
+
+```r
+# Using httr2 package to call OpenAI API
+library(httr2)
+library(jsonlite)
+
+openai_completion <- function(prompt, model = "gpt-4") {
+  request <- request("https://api.openai.com/v1/chat/completions") %>%
+    req_headers(
+      "Content-Type" = "application/json",
+      "Authorization" = paste("Bearer", Sys.getenv("OPENAI_API_KEY"))
+    ) %>%
+    req_body_json(list(
+      model = model,
+      messages = list(list(role = "user", content = prompt)),
+      temperature = 0.7
+    )) %>%
+    req_perform()
+
+  response <- resp_body_json(request)
+  return(response$choices[[1]]$message$content)
+}
+```
+
+### HuggingFace Transformers
+
+Use state-of-the-art NLP models in your R workflow.
+
+```r
+# Using reticulate to access HuggingFace in R
+library(reticulate)
+
+# Initialize transformers
+transformers <- import("transformers")
+
+# Load a pre-trained model
+model_name <- "distilbert-base-uncased-finetuned-sst-2-english"
+tokenizer <- transformers$AutoTokenizer$from_pretrained(model_name)
+model <- transformers$AutoModelForSequenceClassification$from_pretrained(model_name)
+
+# Function to analyze sentiment
+analyze_sentiment <- function(text) {
+  inputs <- tokenizer(text, return_tensors = "pt")
+  outputs <- model(**inputs)
+  predictions <- outputs$logits$argmax(dim = 2L)
+  return(as.integer(predictions[1]) - 1) # 0 for negative, 1 for positive
+}
+```
+
+### RStudio AI Assistant
+
+RStudio's integrated AI assistance provides code suggestions, explanations, and more.
+
+## Coming Soon
+
+* Integration tutorials
+* Performance benchmarks
+* Cost considerations

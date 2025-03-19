@@ -2,17 +2,23 @@ project:
   type: website
 
 website:
-  title: "Effective LLM Prompting for R"
+  title: "AI Resources for R"
   navbar:
-    right:
+    background: primary
+    left:
       - href: index.qmd
-        text: 'Home'
+        text: Home
+      - href: pages/useful-prompts.qmd
+        text: Useful Prompts
+      - href: pages/r-packages.qmd
+        text: R Packages
+      - href: pages/ai-tools.qmd
+        text: AI Tools
+      - href: pages/statistical-workflows.qmd
+        text: Statistical Workflows
 
 format:
   html:
     theme: cosmo
     css: styles.css
     toc: true
-
-
-

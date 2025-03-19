@@ -1,168 +1,105 @@
 ---
-title: "Creating Effective Prompts for R Coding"
-description: "A guide to constructing high-quality prompts for leveraging Large Language Models (LLMs) in R."
-author: ["Jared Klug", "Shaun Porwal"]
-date: "2024-12-24"
-categories: [R Programming, LLMs, Tutorials]
+title: "AI Resources for R Programmers"
+page-layout: full
+toc: false
 ---
 
-# Fundamental Principles of Prompt Construction
+::: {.grid .content-container}
 
-## Set Clear Goals
+::: {.g-col-12 .g-col-md-6 .card-container}
+::: {.card}
+### [Useful Prompts]{.card-title}
 
-- Specify the task and desired outcome.
-- Eliminate ambiguity in the requirements.
+A curated collection of effective prompts for leveraging AI in your R workflows.
 
-::: {.callout-warning title="Bad Prompt"}
-**TASK:** Text cleaning function  
-**INPUT:** character vector  
-**REQUIREMENTS:**  
-- Remove special characters  
-- Convert to lowercase  
-**OUTPUT:** cleaned vector
+[<a href="pages/useful-prompts.html" class="btn btn-primary">Explore prompts →</a>]{.card-button}
+:::
 :::
 
-::: {.callout-note title="Good Prompt"}
-Create an R function that cleans text data by removing special characters and converting to lowercase. The input should be a character vector.
+::: {.g-col-12 .g-col-md-6 .card-container}
+::: {.card}
+### [R Packages]{.card-title}
 
-Please provide the code and a brief explanation of your approach.
+Essential R packages that enhance your AI development and integration capabilities.
+
+[<a href="pages/r-packages.html" class="btn btn-primary">Discover packages →</a>]{.card-button}
+:::
 :::
 
-## Use Positive Language
+::: {.g-col-12 .g-col-md-6 .card-container}
+::: {.card}
+### [AI Tools]{.card-title}
 
-Frame requests in terms of "do this" rather than "don't do this." This encourages clarity and actionable guidance.
+Tools and services that seamlessly integrate with R for machine learning and AI applications.
 
----
-
-# Natural Language and Rigid Formatting
-
-Modern LLMs excel at understanding natural language. Keep prompts conversational but specific.
-
-## Provide Context and Specifications
-
-- Specify the desired output format (e.g., R function, script, or data frame).
-- Include relevant libraries or packages.
-
-::: {.callout-note title="Good Prompt"}
-```r
-Using the tidyverse ecosystem in R, write code to analyze my sales data with these specifications:
-
-sales_data <- data.frame(
-  date = c("2024-01-01", "2024-01-02", "2024-01-01"),
-  region = c("North", "South", "North"),
-  sales = c(1200, NA, 1500),
-  units = c(50, 45, 60)
-)
-
-Requirements:
-1. Calculate mean sales and total units by region and month.
-2. Format dates appropriately.
-3. Return results in a tidied data frame.
-```
+[<a href="pages/ai-tools.html" class="btn btn-primary">View tools →</a>]{.card-button}
+:::
 :::
 
-::: {.callout-warning title="Bad Prompt"}
-```r
-Average my data in R.
+::: {.g-col-12 .g-col-md-6 .card-container}
+::: {.card}
+### [Statistical Workflows]{.card-title}
 
-sales_data <- data.frame(
-  date = c("2024-01-01", "2024-01-02", "2024-01-01"),
-  region = c("North", "South", "North"),
-  sales = c(1200, NA, 1500),
-  units = c(50, 45, 60)
-)
-```
+AI-enhanced methods for statistical analysis and data pipeline optimization in R.
+
+[<a href="pages/statistical-workflows.html" class="btn btn-primary">Learn workflows →</a>]{.card-button}
+:::
 :::
 
----
-
-# Encourage Reasoning and Explanation
-
-- Request step-by-step explanations in addition to code.
-- Ask for comments within the code to clarify its functionality.
-- Request a summary of the approach or methodology used.
-
----
-
-# Optimize for R-Specific Tasks
-
-### Data Manipulation
-Specify the preferred libraries or frameworks for data handling, such as `dplyr`.
-
-### Visualization
-Explicitly mention visualization libraries like `ggplot2` or `plotly`.
-
-::: {.callout-note title="Good Prompt"}
-```r
-Create a ggplot2 visualization in R that shows the relationship between `mpg` and `hp` from the mtcars dataset. The plot should:
-- Use a scatter plot with a smooth trend line.
-- Color the points by the `cyl` variable.
-- Use a minimal theme.
-```
 :::
 
----
-
-# Improve Code Quality
-
-- Request performance optimization and adherence to established style guides.
-- Suggest refactoring to ensure modular, reusable code.
-
-::: {.callout-note title="Good Prompt"}
-```r
-Refactor the following R code to improve performance and readability using the tidyverse style guide and vector operations.
-
-my_function <- function(df) {
-  result <- data.frame()
-  for (i in 1:nrow(df)) {
-    if (!is.na(df$value[i]) & df$category[i] == "A") {
-      temp <- data.frame(
-        id = df$id[i],
-        transformed = sqrt(df$value[i]),
-        group = df$category[i]
-      )
-      result <- rbind(result, temp)
-    }
-  }
-  return(result)
+<style>
+.content-container {
+  margin-top: 2rem;
 }
-```
-:::
 
----
+.card-container {
+  padding: 0.75rem;
+}
 
-# Leverage R's Strengths
+.card {
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: 100%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+}
 
-- **Vectorization:** Request the use of vectorized operations where applicable.
-- **Functional Programming:** Encourage using `apply` functions or the `purrr` library for functional programming paradigms.
-- **Data Types:** Specify the use of appropriate data structures like lists or data frames to improve efficiency.
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
 
----
+.card-title {
+  color: #2c3e50;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 0.5rem;
+}
 
-# Iterative Improvement
+.btn {
+  display: inline-block;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
+  text-decoration: none;
+  margin-top: auto;
+  font-weight: 500;
+}
 
-1. Start with a basic prompt and iterate based on feedback.
-2. Review the generated output and refine your requirements.
-3. Use specific follow-ups to clarify or improve aspects of the output.
-4. Restart with a refined prompt when the direction changes significantly.
+.btn-primary {
+  background-color: #4e79a7;
+  color: white !important;
+}
 
----
+.btn-primary:hover {
+  background-color: #3a5a80;
+}
 
-# Summary
-
-## Do:
-
-- Clearly specify the required packages and dependencies.
-- Include sample data or a detailed description of the expected data structure.
-- Request robust error handling and input validation.
-- Break down complex tasks into smaller, manageable prompts.
-- Ask for explanations of choices or methods used.
-
-## Don’t:
-
-- Provide ambiguous or incomplete requirements.
-- Overload prompts with unrelated tasks.
-- Assume implicit knowledge of specific packages without mentioning them.
-- Neglect to specify data types or structures explicitly.
-
----
+.card-button {
+  margin-top: auto;
+  align-self: flex-start;
+}
+</style>
