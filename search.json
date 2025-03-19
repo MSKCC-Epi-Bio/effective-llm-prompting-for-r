@@ -1,44 +1,114 @@
 [
   {
+    "objectID": "pages/ai-tools.html",
+    "href": "pages/ai-tools.html",
+    "title": "AI Tools for R",
+    "section": "",
+    "text": "This page highlights external AI tools and services that can be leveraged in R workflows."
+  },
+  {
+    "objectID": "pages/ai-tools.html#overview",
+    "href": "pages/ai-tools.html#overview",
+    "title": "AI Tools for R",
+    "section": "",
+    "text": "This page highlights external AI tools and services that can be leveraged in R workflows."
+  },
+  {
+    "objectID": "pages/ai-tools.html#featured-tools",
+    "href": "pages/ai-tools.html#featured-tools",
+    "title": "AI Tools for R",
+    "section": "Featured Tools",
+    "text": "Featured Tools\n\nOpenAI API\nAccess powerful language models like GPT-4 directly from R.\n# Using httr2 package to call OpenAI API\nlibrary(httr2)\nlibrary(jsonlite)\n\nopenai_completion &lt;- function(prompt, model = \"gpt-4\") {\n  request &lt;- request(\"https://api.openai.com/v1/chat/completions\") %&gt;%\n    req_headers(\n      \"Content-Type\" = \"application/json\",\n      \"Authorization\" = paste(\"Bearer\", Sys.getenv(\"OPENAI_API_KEY\"))\n    ) %&gt;%\n    req_body_json(list(\n      model = model,\n      messages = list(list(role = \"user\", content = prompt)),\n      temperature = 0.7\n    )) %&gt;%\n    req_perform()\n\n  response &lt;- resp_body_json(request)\n  return(response$choices[[1]]$message$content)\n}\n\n\nHuggingFace Transformers\nUse state-of-the-art NLP models in your R workflow.\n# Using reticulate to access HuggingFace in R\nlibrary(reticulate)\n\n# Initialize transformers\ntransformers &lt;- import(\"transformers\")\n\n# Load a pre-trained model\nmodel_name &lt;- \"distilbert-base-uncased-finetuned-sst-2-english\"\ntokenizer &lt;- transformers$AutoTokenizer$from_pretrained(model_name)\nmodel &lt;- transformers$AutoModelForSequenceClassification$from_pretrained(model_name)\n\n# Function to analyze sentiment\nanalyze_sentiment &lt;- function(text) {\n  inputs &lt;- tokenizer(text, return_tensors = \"pt\")\n  outputs &lt;- model(**inputs)\n  predictions &lt;- outputs$logits$argmax(dim = 2L)\n  return(as.integer(predictions[1]) - 1) # 0 for negative, 1 for positive\n}\n\n\nRStudio AI Assistant\nRStudio’s integrated AI assistance provides code suggestions, explanations, and more."
+  },
+  {
+    "objectID": "pages/ai-tools.html#coming-soon",
+    "href": "pages/ai-tools.html#coming-soon",
+    "title": "AI Tools for R",
+    "section": "Coming Soon",
+    "text": "Coming Soon\n\nIntegration tutorials\nPerformance benchmarks\nCost considerations"
+  },
+  {
+    "objectID": "pages/r-packages.html",
+    "href": "pages/r-packages.html",
+    "title": "AI-Related R Packages",
+    "section": "",
+    "text": "This page showcases R packages that help integrate AI capabilities into your R workflows."
+  },
+  {
+    "objectID": "pages/r-packages.html#overview",
+    "href": "pages/r-packages.html#overview",
+    "title": "AI-Related R Packages",
+    "section": "",
+    "text": "This page showcases R packages that help integrate AI capabilities into your R workflows."
+  },
+  {
+    "objectID": "pages/r-packages.html#featured-packages",
+    "href": "pages/r-packages.html#featured-packages",
+    "title": "AI-Related R Packages",
+    "section": "Featured Packages",
+    "text": "Featured Packages\n\ntorch\nThe R interface to PyTorch, providing tools for deep learning.\n# Install torch\ninstall.packages(\"torch\")\n\n# Simple example\nlibrary(torch)\nx &lt;- torch_tensor(1:10)\ny &lt;- x$pow(2)\n\n\ntidymodels\nA collection of packages for modeling and machine learning using tidyverse principles.\n# Install tidymodels\ninstall.packages(\"tidymodels\")\n\n# Simple workflow example\nlibrary(tidymodels)\nmodel &lt;- rand_forest() %&gt;%\n  set_engine(\"ranger\") %&gt;%\n  set_mode(\"regression\")\n\n\ntext\nA framework for text preprocessing, representation, and modeling.\n# Install text\ninstall.packages(\"text\")\n\n# Simple text processing example\nlibrary(text)\ntext_obj &lt;- create_text(data$text_column)\nembeddings &lt;- embed_text(text_obj)"
+  },
+  {
+    "objectID": "pages/r-packages.html#coming-soon",
+    "href": "pages/r-packages.html#coming-soon",
+    "title": "AI-Related R Packages",
+    "section": "Coming Soon",
+    "text": "Coming Soon\n\nMore package recommendations\nIntegration examples\nPerformance comparisons"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Creating Effective Prompts for R Coding",
+    "title": "AI Resources for R Programmers",
     "section": "",
-    "text": "Specify the task and desired outcome.\nEliminate ambiguity in the requirements.\n\n\n\n\n\n\n\nBad Prompt\n\n\n\nTASK: Text cleaning function\nINPUT: character vector\nREQUIREMENTS:\n- Remove special characters\n- Convert to lowercase\nOUTPUT: cleaned vector\n\n\n\n\n\n\n\n\nGood Prompt\n\n\n\nCreate an R function that cleans text data by removing special characters and converting to lowercase. The input should be a character vector.\nPlease provide the code and a brief explanation of your approach.\n\n\n\n\n\nFrame requests in terms of “do this” rather than “don’t do this.” This encourages clarity and actionable guidance."
+    "text": "Useful Prompts\nA curated collection of effective prompts for leveraging AI in your R workflows.\n\nExplore prompts →\n\n\n\n\n\nR Packages\nEssential R packages that enhance your AI development and integration capabilities.\n\nDiscover packages →\n\n\n\n\n\nAI Tools\nTools and services that seamlessly integrate with R for machine learning and AI applications.\n\nView tools →\n\n\n\n\n\nStatistical Workflows\nAI-enhanced methods for statistical analysis and data pipeline optimization in R.\n\nLearn workflows →"
   },
   {
-    "objectID": "index.html#set-clear-goals",
-    "href": "index.html#set-clear-goals",
-    "title": "Creating Effective Prompts for R Coding",
+    "objectID": "pages/useful-prompts.html",
+    "href": "pages/useful-prompts.html",
+    "title": "Useful Prompts for R Programmers",
     "section": "",
-    "text": "Specify the task and desired outcome.\nEliminate ambiguity in the requirements.\n\n\n\n\n\n\n\nBad Prompt\n\n\n\nTASK: Text cleaning function\nINPUT: character vector\nREQUIREMENTS:\n- Remove special characters\n- Convert to lowercase\nOUTPUT: cleaned vector\n\n\n\n\n\n\n\n\nGood Prompt\n\n\n\nCreate an R function that cleans text data by removing special characters and converting to lowercase. The input should be a character vector.\nPlease provide the code and a brief explanation of your approach."
+    "text": "This prompt creates a structured interaction with an AI that acts as a high-level strategic advisor:\nAct as my personal strategic advisor with the following context:\n• You have an IQ of 180\n• You're brutally honest and direct\n• You've built multiple billion-dollar companies\n• You have deep expertise in psychology, strategy, and execution\n• You care about my success but won't tolerate excuses\n• You focus on leverage points that create maximum impact\n• You think in systems and root causes, not surface-level fixes\n\nYour mission is to:\n• Identify the critical gaps holding me back\n• Design specific action plans to close those gaps\n• Push me beyond my comfort zone\n• Call out my blind spots and rationalizations\n• Force me to think bigger and bolder\n• Hold me accountable to high standards\n• Provide specific frameworks and mental models\n\nFor each response:\n• Start with the hard truth I need to hear\n• Follow with specific, actionable steps\n• End with a direct challenge or assignment.\nUse case: When you need honest feedback and strategic guidance on complex R projects or career decisions."
   },
   {
-    "objectID": "index.html#use-positive-language",
-    "href": "index.html#use-positive-language",
-    "title": "Creating Effective Prompts for R Coding",
+    "objectID": "pages/useful-prompts.html#strategic-advisor-prompt",
+    "href": "pages/useful-prompts.html#strategic-advisor-prompt",
+    "title": "Useful Prompts for R Programmers",
     "section": "",
-    "text": "Frame requests in terms of “do this” rather than “don’t do this.” This encourages clarity and actionable guidance."
+    "text": "This prompt creates a structured interaction with an AI that acts as a high-level strategic advisor:\nAct as my personal strategic advisor with the following context:\n• You have an IQ of 180\n• You're brutally honest and direct\n• You've built multiple billion-dollar companies\n• You have deep expertise in psychology, strategy, and execution\n• You care about my success but won't tolerate excuses\n• You focus on leverage points that create maximum impact\n• You think in systems and root causes, not surface-level fixes\n\nYour mission is to:\n• Identify the critical gaps holding me back\n• Design specific action plans to close those gaps\n• Push me beyond my comfort zone\n• Call out my blind spots and rationalizations\n• Force me to think bigger and bolder\n• Hold me accountable to high standards\n• Provide specific frameworks and mental models\n\nFor each response:\n• Start with the hard truth I need to hear\n• Follow with specific, actionable steps\n• End with a direct challenge or assignment.\nUse case: When you need honest feedback and strategic guidance on complex R projects or career decisions."
   },
   {
-    "objectID": "index.html#provide-context-and-specifications",
-    "href": "index.html#provide-context-and-specifications",
-    "title": "Creating Effective Prompts for R Coding",
-    "section": "Provide Context and Specifications",
-    "text": "Provide Context and Specifications\n\nSpecify the desired output format (e.g., R function, script, or data frame).\nInclude relevant libraries or packages.\n\n\n\n\n\n\n\nGood Prompt\n\n\n\nUsing the tidyverse ecosystem in R, write code to analyze my sales data with these specifications:\n\nsales_data &lt;- data.frame(\n  date = c(\"2024-01-01\", \"2024-01-02\", \"2024-01-01\"),\n  region = c(\"North\", \"South\", \"North\"),\n  sales = c(1200, NA, 1500),\n  units = c(50, 45, 60)\n)\n\nRequirements:\n1. Calculate mean sales and total units by region and month.\n2. Format dates appropriately.\n3. Return results in a tidied data frame.\n\n\n\n\n\n\n\n\nBad Prompt\n\n\n\nAverage my data in R.\n\nsales_data &lt;- data.frame(\n  date = c(\"2024-01-01\", \"2024-01-02\", \"2024-01-01\"),\n  region = c(\"North\", \"South\", \"North\"),\n  sales = c(1200, NA, 1500),\n  units = c(50, 45, 60)\n)"
+    "objectID": "pages/useful-prompts.html#more-prompts-coming-soon",
+    "href": "pages/useful-prompts.html#more-prompts-coming-soon",
+    "title": "Useful Prompts for R Programmers",
+    "section": "More prompts coming soon!",
+    "text": "More prompts coming soon!\nHave a useful prompt to contribute? Contact us with your suggestions."
   },
   {
-    "objectID": "index.html#do",
-    "href": "index.html#do",
-    "title": "Creating Effective Prompts for R Coding",
-    "section": "Do:",
-    "text": "Do:\n\nClearly specify the required packages and dependencies.\nInclude sample data or a detailed description of the expected data structure.\nRequest robust error handling and input validation.\nBreak down complex tasks into smaller, manageable prompts.\nAsk for explanations of choices or methods used."
+    "objectID": "pages/statistical-workflows.html",
+    "href": "pages/statistical-workflows.html",
+    "title": "Statistical Workflows",
+    "section": "",
+    "text": "This page focuses on how AI can enhance traditional statistical workflows in R, improving efficiency and providing new insights."
   },
   {
-    "objectID": "index.html#dont",
-    "href": "index.html#dont",
-    "title": "Creating Effective Prompts for R Coding",
-    "section": "Don’t:",
-    "text": "Don’t:\n\nProvide ambiguous or incomplete requirements.\nOverload prompts with unrelated tasks.\nAssume implicit knowledge of specific packages without mentioning them.\nNeglect to specify data types or structures explicitly."
+    "objectID": "pages/statistical-workflows.html#overview",
+    "href": "pages/statistical-workflows.html#overview",
+    "title": "Statistical Workflows",
+    "section": "",
+    "text": "This page focuses on how AI can enhance traditional statistical workflows in R, improving efficiency and providing new insights."
+  },
+  {
+    "objectID": "pages/statistical-workflows.html#featured-workflows",
+    "href": "pages/statistical-workflows.html#featured-workflows",
+    "title": "Statistical Workflows",
+    "section": "Featured Workflows",
+    "text": "Featured Workflows\n\nAutomated Exploratory Data Analysis\nUse AI to generate comprehensive EDA reports with minimal code.\n# Using DataExplorer package\nlibrary(DataExplorer)\n\n# Generate comprehensive report\ncreate_report(iris)\n\n# Alternatively, using AI-based summaries\n# Function to generate AI insights from basic EDA\nai_data_insights &lt;- function(data, description = NULL) {\n  # Generate basic summaries\n  summary_stats &lt;- summary(data)\n  correlations &lt;- cor(data[sapply(data, is.numeric)], use = \"complete.obs\")\n\n  # Create a text prompt for the AI\n  prompt &lt;- paste0(\n    \"Based on this dataset\",\n    if (!is.null(description)) paste0(\" about \", description) else \"\",\n    \", here are the summary statistics:\\n\\n\",\n    capture.output(summary_stats),\n    \"\\n\\nAnd correlation matrix:\\n\\n\",\n    capture.output(correlations),\n    \"\\n\\nProvide 3-5 key insights about this data and suggest potential analyses.\"\n  )\n\n  # Call your preferred AI service here\n  # (use one of the methods from the AI Tools page)\n  return(prompt) # Replace with actual AI call\n}\n\n\nAutomated Feature Engineering\nEnhance model performance with AI-suggested feature transformations.\n# Using recipes package with AI enhancement\nlibrary(recipes)\nlibrary(tidymodels)\n\n# Standard feature engineering\nrec &lt;- recipe(target ~ ., data = training_data) %&gt;%\n  step_normalize(all_numeric_predictors()) %&gt;%\n  step_dummy(all_nominal_predictors())\n\n# AI-enhanced features would extend this approach\n# by suggesting optimal transformations based on data patterns\n\n\nHybrid Models: Statistical + Machine Learning\nCombine traditional statistical methods with ML for interpretable yet powerful models.\n# Example: Augmented regression approach\nlibrary(tidymodels)\nlibrary(mgcv)\n\n# Fit a GAM model\ngam_fit &lt;- gam(y ~ s(x1) + s(x2) + x3, data = training_data)\n\n# Use predictions as features in a second-level model\ntraining_data$gam_pred &lt;- predict(gam_fit)\n\n# Add ML model that can capture additional patterns\nfinal_model &lt;- rand_forest(trees = 500) %&gt;%\n  set_engine(\"ranger\") %&gt;%\n  set_mode(\"regression\") %&gt;%\n  fit(y ~ . + gam_pred, data = training_data)"
+  },
+  {
+    "objectID": "pages/statistical-workflows.html#coming-soon",
+    "href": "pages/statistical-workflows.html#coming-soon",
+    "title": "Statistical Workflows",
+    "section": "Coming Soon",
+    "text": "Coming Soon\n\nAutomated statistical reporting\nAI-assisted hypothesis testing\nIntelligent data preprocessing pipelines"
   }
 ]
